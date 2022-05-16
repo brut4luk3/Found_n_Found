@@ -3,7 +3,14 @@
 <hr>
 
 {% if rooms_list %}
+
 <ul>
-    <li>{{ rooms_list }}</li>
+    {% for room in rooms_list %}
+    <li><a href="{% url 'objects_and_places:detail_rooms' room.pk %}">{{ room.room_name }}</a></li>
+    {% endfor %}
 </ul>
+{% else %}
+
+<h2>Não há cômodos cadastrados...</h2>
+
 {% endif %}

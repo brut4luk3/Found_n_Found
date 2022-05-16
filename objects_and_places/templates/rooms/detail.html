@@ -1,0 +1,11 @@
+<h1>Lugares para armazenamento do cômodo {{ room_of_storage.room_name }}:</h1>
+
+{% if places_list %}
+
+<ul>
+    {% for place in places_list %}
+    <li>{{ place.place_name }}</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
