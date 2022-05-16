@@ -16,7 +16,7 @@ def index(request):
 
 def detail(request, room_id):
 
-    room = get_object_or_404(Place, pk=room_id)
+    room = get_object_or_404(Room, pk=room_id)
 
     context = {
         'room': room
