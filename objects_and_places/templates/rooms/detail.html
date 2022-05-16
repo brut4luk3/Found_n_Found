@@ -1,9 +1,9 @@
-<h1>Lugares para armazenamento do cômodo {{ room_of_storage.room_name }}:</h1>
+<h1>Lugares para armazenamento do cômodo {{ room.room_name }}:</h1>
 
-{% if places_list %}
+{% if room.place_set.all %}
 
 <ul>
-    {% for place in places_list %}
+    {% for place in room.place_set.all %}
     <li>{{ place.place_name }}</li>
     {% endfor %}
 </ul>

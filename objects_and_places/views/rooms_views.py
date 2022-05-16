@@ -1,9 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
-from ..models import Room, Place
-
+from ..models import Room, Place, Object
 
 def index(request):
 
@@ -15,12 +14,12 @@ def index(request):
 
     return render(request, 'rooms/index.html', context=context)
 
-def detail(request, place_id):
+def detail(request, room_id):
 
-    places_list = get_object_or_404(Place, pk=place_id)
+    room = get_object_or_404(Place, pk=room_id)
 
     context = {
-        'places_list': places_list
+        'room': room
     }
 
     return render(request, 'rooms/detail.html', context=context)
