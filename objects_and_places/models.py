@@ -8,7 +8,7 @@ class Room(models.Model):
         return self.room_name
 
 class Place(models.Model):
-    room_of_storage = models.OneToOneField(Room, on_delete=models.SET_NULL, null=True)
+    room_of_storage = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True)
     place_name = models.CharField(max_length=200)
 
     def __str__(self):
