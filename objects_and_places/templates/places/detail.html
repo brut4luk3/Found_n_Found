@@ -1,0 +1,15 @@
+<h1>Objetos Armazenados em {{ place.place_name }}:</h1>
+
+{% if place.object_set.all %}
+
+<ul>
+    {% for object in place.object_set.all %}
+    <li>{{ object.object_name }}</li>
+    <li>{{ object.pub_date }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+
+<h2>Não há objetos cadastrados...</h2>
+
+{% endif %}

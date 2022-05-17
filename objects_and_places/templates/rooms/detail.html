@@ -4,8 +4,11 @@
 
 <ul>
     {% for place in room.place_set.all %}
-    <li>{{ place.place_name }}</li>
+    <li><a href="{% url 'objects_and_places:detail_places' place.pk %}">{{ place.place_name }}</a></li>
     {% endfor %}
 </ul>
+{% else %}
+
+<h2>Não há lugares cadastrados...</h2>
 
 {% endif %}
